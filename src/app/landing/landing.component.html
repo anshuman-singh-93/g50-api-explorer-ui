@@ -5,8 +5,9 @@
     <div class="card-body">
       <div style="margin-bottom: 40px;">
         <form class="form-inline">
-          <input type="text" name="appId" [(ngModel)]="appId"  class="form-control  " id="inlineFormInputName2" placeholder="APP ID">
-          <button type="submit" class="btn btn-primary btn-sm" (click)="appIdChange()">Change</button>
+          <label>Application ID</label>
+          <input style="margin-right: 10px;margin-left: 10px;" type="text" name="appId" [(ngModel)]="appId"  class="form-control  " id="inlineFormInputName2" placeholder="APP ID">
+          <button type="submit" class="btn btn-primary " (click)="appIdChange()">Change</button>
         </form>
 
       </div>
@@ -27,7 +28,7 @@
       <div class="row">
         <h3 style="width: 100%;text-align: center;opacity: 0.7">List of Places</h3>
 
-        <div class="col-md-3"  style="margin-bottom: 10px;" *ngFor="let device of places">
+        <div class="col-md-3"  style="margin-bottom: 10px;" *ngFor="let place of places">
 
           <div class="card">
 
@@ -36,12 +37,21 @@
             <!--Card content-->
             <div class="card-body">
               <!--Title-->
-              <h4 class="card-title">{{device.name}}</h4>
+              <h6>Name</h6>
+              <p class="card-title">{{place.name}}</p>
               <!--Text-->
 
-              <p class="card-text">{{device._id}}</p>
+              <h6>ID</h6>
+              <p class="card-text">{{place._id}}</p>
+              <h6>Device ID</h6>
+              <p class="card-text">{{place.deviceId}}</p>
 
-              <p class="card-text">{{device.activationDate|date:'medium'}}</p>
+              <h6>Location status</h6>
+              <p class="card-text">{{place.locationStatus}}</p>
+
+              <h6>Last updated at</h6>
+              <p class="card-text">{{place.updatedAt|date:'medium'}}</p>
+
 
             </div>
 
@@ -62,12 +72,25 @@
               <!--Card content-->
               <div class="card-body">
                 <!--Title-->
-                <h4 class="card-title">{{device.name}}</h4>
+
+                <h6>Name</h6>
+
+                <p class="card-title">{{device.name}}</p>
                 <!--Text-->
+
+                <h6>ID</h6>
+
 
                 <p class="card-text">{{device._id}}</p>
 
-                <p class="card-text">{{device.activationDate|date:'medium'}}</p>
+                <h6>Device ID</h6>
+
+
+                <p class="card-text">{{device.deviceId}}</p>
+
+                <h6>Last updaated</h6>
+
+                <p class="card-text">{{device.updatedAt|date:'medium'}}</p>
 
                 <a href="#" [routerLink]="['../device',device._id]" class="  " mdbRippleRadius>View</a>
               </div>

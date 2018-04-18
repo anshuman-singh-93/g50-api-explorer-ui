@@ -409,7 +409,7 @@ var DevicesComponent = /** @class */ (function () {
 /***/ "../../../../../src/app/landing/landing.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<!--Main Navigation-->\r\n  <div class=\"card\">\r\n    <h4 class=\"card-header\">Thinaer API Demo</h4>\r\n    <div class=\"card-body\">\r\n      <div style=\"margin-bottom: 40px;\">\r\n        <form class=\"form-inline\">\r\n          <input type=\"text\" name=\"appId\" [(ngModel)]=\"appId\"  class=\"form-control  \" id=\"inlineFormInputName2\" placeholder=\"APP ID\">\r\n          <button type=\"submit\" class=\"btn btn-primary btn-sm\" (click)=\"appIdChange()\">Change</button>\r\n        </form>\r\n\r\n      </div>\r\n\r\n      <div class=\"sk-cube-grid\" *ngIf=\"httpResolved1==='pending' || httpResolved2==='pending'\">\r\n        <div class=\"sk-cube sk-cube1\"></div>\r\n        <div class=\"sk-cube sk-cube2\"></div>\r\n        <div class=\"sk-cube sk-cube3\"></div>\r\n        <div class=\"sk-cube sk-cube4\"></div>\r\n        <div class=\"sk-cube sk-cube5\"></div>\r\n        <div class=\"sk-cube sk-cube6\"></div>\r\n        <div class=\"sk-cube sk-cube7\"></div>\r\n        <div class=\"sk-cube sk-cube8\"></div>\r\n        <div class=\"sk-cube sk-cube9\"></div>\r\n      </div>\r\n\r\n\r\n      <div class=\"row\">\r\n        <h3 style=\"width: 100%;text-align: center;opacity: 0.7\">List of Places</h3>\r\n\r\n        <div class=\"col-md-3\"  style=\"margin-bottom: 10px;\" *ngFor=\"let device of places\">\r\n\r\n          <div class=\"card\">\r\n\r\n            <!--Card image-->\r\n\r\n            <!--Card content-->\r\n            <div class=\"card-body\">\r\n              <!--Title-->\r\n              <h4 class=\"card-title\">{{device.name}}</h4>\r\n              <!--Text-->\r\n\r\n              <p class=\"card-text\">{{device._id}}</p>\r\n\r\n              <p class=\"card-text\">{{device.activationDate|date:'medium'}}</p>\r\n\r\n            </div>\r\n\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n\r\n      <div class=\"row\" style=\"margin-top: 20px;\">\r\n        <h3 style=\"width: 100%;text-align: center;opacity: 0.7\">List of Devices</h3>\r\n\r\n          <div class=\"col-md-3\" style=\"margin-bottom: 10px;\" *ngFor=\"let device of devices\">\r\n\r\n            <div class=\"card\">\r\n\r\n              <!--Card image-->\r\n\r\n              <!--Card content-->\r\n              <div class=\"card-body\">\r\n                <!--Title-->\r\n                <h4 class=\"card-title\">{{device.name}}</h4>\r\n                <!--Text-->\r\n\r\n                <p class=\"card-text\">{{device._id}}</p>\r\n\r\n                <p class=\"card-text\">{{device.activationDate|date:'medium'}}</p>\r\n\r\n                <a href=\"#\" [routerLink]=\"['../device',device._id]\" class=\"  \" mdbRippleRadius>View</a>\r\n              </div>\r\n\r\n            </div>\r\n          </div>\r\n      </div>\r\n\r\n  </div>\r\n\r\n  </div>\r\n\r\n\r\n\r\n\r\n\r\n<!--Main Navigation-->\r\n"
+module.exports = "\r\n<!--Main Navigation-->\r\n  <div class=\"card\">\r\n    <h4 class=\"card-header\">Thinaer API Demo</h4>\r\n    <div class=\"card-body\">\r\n      <div style=\"margin-bottom: 40px;\">\r\n        <form class=\"form-inline\">\r\n          <label>Application ID</label>\r\n          <input style=\"margin-right: 10px;margin-left: 10px;\" type=\"text\" name=\"appId\" [(ngModel)]=\"appId\"  class=\"form-control  \" id=\"inlineFormInputName2\" placeholder=\"APP ID\">\r\n          <button type=\"submit\" class=\"btn btn-primary \" (click)=\"appIdChange()\">Change</button>\r\n        </form>\r\n\r\n      </div>\r\n\r\n      <div class=\"sk-cube-grid\" *ngIf=\"httpResolved1==='pending' || httpResolved2==='pending'\">\r\n        <div class=\"sk-cube sk-cube1\"></div>\r\n        <div class=\"sk-cube sk-cube2\"></div>\r\n        <div class=\"sk-cube sk-cube3\"></div>\r\n        <div class=\"sk-cube sk-cube4\"></div>\r\n        <div class=\"sk-cube sk-cube5\"></div>\r\n        <div class=\"sk-cube sk-cube6\"></div>\r\n        <div class=\"sk-cube sk-cube7\"></div>\r\n        <div class=\"sk-cube sk-cube8\"></div>\r\n        <div class=\"sk-cube sk-cube9\"></div>\r\n      </div>\r\n\r\n\r\n      <div class=\"row\">\r\n        <h3 style=\"width: 100%;text-align: center;opacity: 0.7\">List of Places</h3>\r\n\r\n        <div class=\"col-md-3\"  style=\"margin-bottom: 10px;\" *ngFor=\"let place of places\">\r\n\r\n          <div class=\"card\">\r\n\r\n            <!--Card image-->\r\n\r\n            <!--Card content-->\r\n            <div class=\"card-body\">\r\n              <!--Title-->\r\n              <h6>Name</h6>\r\n              <p class=\"card-title\">{{place.name}}</p>\r\n              <!--Text-->\r\n\r\n              <h6>ID</h6>\r\n              <p class=\"card-text\">{{place._id}}</p>\r\n              <h6>Device ID</h6>\r\n              <p class=\"card-text\">{{place.deviceId}}</p>\r\n\r\n              <h6>Location status</h6>\r\n              <p class=\"card-text\">{{place.locationStatus}}</p>\r\n\r\n              <h6>Last updated at</h6>\r\n              <p class=\"card-text\">{{place.updatedAt|date:'medium'}}</p>\r\n\r\n\r\n            </div>\r\n\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n\r\n      <div class=\"row\" style=\"margin-top: 20px;\">\r\n        <h3 style=\"width: 100%;text-align: center;opacity: 0.7\">List of Devices</h3>\r\n\r\n          <div class=\"col-md-3\" style=\"margin-bottom: 10px;\" *ngFor=\"let device of devices\">\r\n\r\n            <div class=\"card\">\r\n\r\n              <!--Card image-->\r\n\r\n              <!--Card content-->\r\n              <div class=\"card-body\">\r\n                <!--Title-->\r\n\r\n                <h6>Name</h6>\r\n\r\n                <p class=\"card-title\">{{device.name}}</p>\r\n                <!--Text-->\r\n\r\n                <h6>ID</h6>\r\n\r\n\r\n                <p class=\"card-text\">{{device._id}}</p>\r\n\r\n                <h6>Device ID</h6>\r\n\r\n\r\n                <p class=\"card-text\">{{device.deviceId}}</p>\r\n\r\n                <h6>Last updaated</h6>\r\n\r\n                <p class=\"card-text\">{{device.updatedAt|date:'medium'}}</p>\r\n\r\n                <a href=\"#\" [routerLink]=\"['../device',device._id]\" class=\"  \" mdbRippleRadius>View</a>\r\n              </div>\r\n\r\n            </div>\r\n          </div>\r\n      </div>\r\n\r\n  </div>\r\n\r\n  </div>\r\n\r\n\r\n\r\n\r\n\r\n<!--Main Navigation-->\r\n"
 
 /***/ }),
 
@@ -521,6 +521,7 @@ var LandingComponent = /** @class */ (function () {
                         this.httpResolved1 = 'resolved';
                         console.log('things are');
                         console.log(this.devices);
+                        this.sortDevices();
                         return [3 /*break*/, 4];
                     case 3:
                         err_1 = _a.sent();
@@ -529,6 +530,20 @@ var LandingComponent = /** @class */ (function () {
                     case 4: return [2 /*return*/];
                 }
             });
+        });
+    };
+    LandingComponent.prototype.sortDevices = function () {
+        this.devices.sort(function (a, b) {
+            var d1 = new Date(a.updatedAt).getTime();
+            var d2 = new Date(b.updatedAt).getTime();
+            return d1 < d2;
+        });
+    };
+    LandingComponent.prototype.sortPlaces = function () {
+        this.places.sort(function (a, b) {
+            var d1 = new Date(a.updatedAt).getTime();
+            var d2 = new Date(b.updatedAt).getTime();
+            return d1 < d2;
         });
     };
     LandingComponent.prototype.getPlaces = function () {
@@ -548,6 +563,7 @@ var LandingComponent = /** @class */ (function () {
                         console.log('places are');
                         console.log(this.places);
                         this.httpResolved2 = 'resolved';
+                        this.sortPlaces();
                         return [3 /*break*/, 4];
                     case 3:
                         err_2 = _a.sent();

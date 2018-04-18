@@ -38,6 +38,7 @@ export class LandingComponent implements OnInit {
       this.httpResolved1='resolved';
       console.log('things are')
       console.log(this.devices)
+      this.sortDevices();
 
     }
     catch (err){
@@ -45,6 +46,25 @@ export class LandingComponent implements OnInit {
 
     }
 
+  }
+
+  sortDevices(){
+    this.devices.sort((a:any,b:any):any=>{
+      let d1= new Date(a.updatedAt).getTime();
+      let d2= new Date(b.updatedAt).getTime();
+
+      return d1<d2;
+    })
+  }
+
+
+  sortPlaces(){
+     this.places.sort((a:any,b:any):any=>{
+      let d1= new Date(a.updatedAt).getTime();
+      let d2= new Date(b.updatedAt).getTime();
+
+      return d1<d2;
+    })
   }
 
 
@@ -57,6 +77,7 @@ export class LandingComponent implements OnInit {
       console.log('places are')
       console.log(this.places)
       this.httpResolved2='resolved';
+      this.sortPlaces();
 
     }
     catch (err){

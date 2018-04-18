@@ -5,7 +5,7 @@
 
 export const environment = {
   production: false,
-  apiURL: 'http://127.0.0.1:3001/api',
+  apiURL: 'http://159.89.166.98:3001/api',
   apiPORT: '3001',
   appId:'5aa19a708255f653fc67fc58'
 };
