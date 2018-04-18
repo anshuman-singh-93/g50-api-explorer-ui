@@ -1,0 +1,133 @@
+<div class="card">
+  <h4 class="card-header" [routerLink]="['../../home']">Thinaer API Demo</h4>
+
+  <div class="card-body">
+    <div class="container" style="margin-top: 5vh" >
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h3 style="width: 100%;text-align: center;opacity: 0.7">Device details</h3>
+          <div class="card">
+
+            <!--Card image-->
+
+            <div class="card-header">
+              {{device.details?.name}}
+            </div>
+            <!--Card content-->
+            <div class="card-body">
+              <!--Title-->
+              <!--Text-->
+              <dl class="row">
+                <dt class="col-sm-3">Id</dt>
+                <dd class="col-sm-9">{{device.details?._id}}</dd>
+
+                <dt class="col-sm-3">Created at</dt>
+                <dd class="col-sm-9">{{device.details?.createdAt|date:'medium'}}</dd>
+
+                <dt class="col-sm-3 text-truncate">Updated at</dt>
+                <dd class="col-sm-9">{{device.details?.updatedAt|date:'medium'}}</dd>
+                <dt class="col-sm-3 text-truncate">Activation date</dt>
+                <dd class="col-sm-9">{{device.details?.activationDate|date:'medium'}}</dd>
+              </dl>
+
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <h3 style="width: 100%;text-align: center;opacity: 0.7">Device movement history</h3>
+          <div class="card" *ngFor=" let movement of device.movements?.docs">
+
+            <!--Card content-->
+            <div class="card-body">
+              <dl class="row">
+
+                <dt class="col-sm-3">deviceId</dt>
+                <dd class="col-sm-9">{{movement.to.deviceId}}</dd>
+
+
+                <dt class="col-sm-3 text-truncate">distanceFrom</dt>
+                <dd class="col-sm-9">{{movement.to.distanceFrom}}</dd>
+
+                <dt class="col-sm-3 text-truncate">distanceUnits</dt>
+                <dd class="col-sm-9">{{movement.to.distanceUnits}}</dd>
+
+
+                <dt class="col-sm-3 text-truncate">name</dt>
+                <dd class="col-sm-9">{{movement.to.name}}</dd>
+
+                <dt class="col-sm-3 text-truncate">rssi</dt>
+                <dd class="col-sm-9">{{movement.to.rssi}}</dd>
+
+              </dl>
+
+
+            </div>
+
+          </div>
+
+          <h6 style="text-align: center" *ngIf="!device.movements?.docs.length">No movement history found</h6>
+
+        </div>
+
+        <div class="col-md-6">
+          <h3 style="width: 100%;text-align: center;opacity: 0.7">Device peripheral history</h3>
+
+
+          <div class="card" *ngFor=" let peripheral of device.perepherals?.docs">
+            <!--Card content-->
+            <div class="card-body">
+
+              <dl class="row">
+                <dt class="col-sm-3">entityDeviceId</dt>
+                <dd class="col-sm-9">{{peripheral.entityDeviceId}}</dd>
+
+                <dt class="col-sm-3">barometricPressure</dt>
+                <dd class="col-sm-9">{{peripheral.reading.barometricPressure}}</dd>
+
+
+                <dt class="col-sm-3 text-truncate">internalTemperature</dt>
+                <dd class="col-sm-9">{{peripheral.reading.internalTemperature}}</dd>
+
+                <dt class="col-sm-3 text-truncate">externalTemperature</dt>
+                <dd class="col-sm-9">{{peripheral.reading.externalTemperature}}</dd>
+
+
+                <dt class="col-sm-3 text-truncate">batteryLevel</dt>
+                <dd class="col-sm-9">{{peripheral.reading.batteryLevel}}</dd>
+
+                <dt class="col-sm-3 text-truncate">Updated at</dt>
+                <dd class="col-sm-9">{{peripheral.reading.recordedAt|date:'medium'}}</dd>
+
+                <dt class="col-sm-3 text-truncate">timestamp</dt>
+                <dd class="col-sm-9">{{peripheral.reading.timestamp|date:'medium'}}</dd>
+                <dt class="col-sm-3 text-truncate">updatedAt</dt>
+                <dd class="col-sm-9">{{peripheral.reading.updatedAt|date:'medium'}}</dd>
+              </dl>
+
+            </div>
+
+          </div>
+
+          <h6 style="text-align: center" *ngIf="!device.perepherals?.docs.length">No peripheral history found</h6>
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+
+  </div>
+</div>
+
+
+
+<!--Main Navigation-->

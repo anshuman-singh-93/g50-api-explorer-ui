@@ -1,0 +1,87 @@
+
+<!--Main Navigation-->
+  <div class="card">
+    <h4 class="card-header">Thinaer API Demo</h4>
+    <div class="card-body">
+      <div style="margin-bottom: 40px;">
+        <form class="form-inline">
+          <input type="text" name="appId" [(ngModel)]="appId"  class="form-control  " id="inlineFormInputName2" placeholder="APP ID">
+          <button type="submit" class="btn btn-primary btn-sm" (click)="appIdChange()">Change</button>
+        </form>
+
+      </div>
+
+      <div class="sk-cube-grid" *ngIf="httpResolved1==='pending' || httpResolved2==='pending'">
+        <div class="sk-cube sk-cube1"></div>
+        <div class="sk-cube sk-cube2"></div>
+        <div class="sk-cube sk-cube3"></div>
+        <div class="sk-cube sk-cube4"></div>
+        <div class="sk-cube sk-cube5"></div>
+        <div class="sk-cube sk-cube6"></div>
+        <div class="sk-cube sk-cube7"></div>
+        <div class="sk-cube sk-cube8"></div>
+        <div class="sk-cube sk-cube9"></div>
+      </div>
+
+
+      <div class="row">
+        <h3 style="width: 100%;text-align: center;opacity: 0.7">List of Places</h3>
+
+        <div class="col-md-3"  style="margin-bottom: 10px;" *ngFor="let device of places">
+
+          <div class="card">
+
+            <!--Card image-->
+
+            <!--Card content-->
+            <div class="card-body">
+              <!--Title-->
+              <h4 class="card-title">{{device.name}}</h4>
+              <!--Text-->
+
+              <p class="card-text">{{device._id}}</p>
+
+              <p class="card-text">{{device.activationDate|date:'medium'}}</p>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row" style="margin-top: 20px;">
+        <h3 style="width: 100%;text-align: center;opacity: 0.7">List of Devices</h3>
+
+          <div class="col-md-3" style="margin-bottom: 10px;" *ngFor="let device of devices">
+
+            <div class="card">
+
+              <!--Card image-->
+
+              <!--Card content-->
+              <div class="card-body">
+                <!--Title-->
+                <h4 class="card-title">{{device.name}}</h4>
+                <!--Text-->
+
+                <p class="card-text">{{device._id}}</p>
+
+                <p class="card-text">{{device.activationDate|date:'medium'}}</p>
+
+                <a href="#" [routerLink]="['../device',device._id]" class="  " mdbRippleRadius>View</a>
+              </div>
+
+            </div>
+          </div>
+      </div>
+
+  </div>
+
+  </div>
+
+
+
+
+
+<!--Main Navigation-->
