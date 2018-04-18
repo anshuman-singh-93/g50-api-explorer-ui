@@ -1198,7 +1198,7 @@ var ThinaerService = /** @class */ (function () {
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 var environment = {
     production: true,
-    apiURL: 'http://159.89.166.98/:3001/api',
+    apiURL: 'http://159.89.166.98:3001/api',
     apiPORT: '3001',
     appId: '5aa19a708255f653fc67fc58'
 };
